@@ -14,14 +14,10 @@ session_start();
 <body>
 <?php
 
-if (isset($_SESSION['name'])){
-
+if (isset($_SESSION['name']) && $_SESSION['ip']===$_SERVER['REMOTE_ADDR']){
     require_once('welcome.php');
-
 }else{
-
     require_once('login.php');
-
 }
 
 ?>
